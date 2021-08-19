@@ -1,0 +1,107 @@
+1]	Formal parameters are local variables that are private to the function
+	Actual arguments are values that are assigned to formal parameters of a function, when it is called.
+	
+2]	a)	void donut( int n)
+	b)	int gear( int n1, int n2)
+	c)	int guess(void)
+	d)	void stuff_it(double d, *double pd)
+	
+3]	a)	char n_to_char(int n)
+	b)	int digits(double n1, int n2)
+	c)	double *which( *double, *double)
+	d)	int random(void)
+	
+4]	int sum( int a, int b)
+	{
+		return a + b
+	
+	}
+	
+5]	int double( double a, double b)
+	{
+		
+		return  a + b;
+	}
+	
+6]	void alter( int x, int y)
+	{
+		int *px, *py;
+		
+		printf("Original x = %d, Origial y = %d\n", x, y);
+		
+		px = &x;
+		
+		py = &y;
+		
+		*px = x + y;
+		
+		*py = x - y;
+		
+		printf("Changed x = %d, Changed y = %d", x, y);
+		
+		}
+		
+7]	The type of num formal argument is not given in function header.
+	The variable that should be updated is count and not num. count ++
+	
+8]	#include<stdio.h>
+	
+	int part_a( void );
+	int part_b( int, int);
+	
+	int main(void)
+	{
+		int choice;
+		
+		choice = part_b();
+		
+		return 0;
+	}
+
+	int part_b( int ll, int ul)
+	{
+		int number, choice, read_status ;
+		
+		printf("Enter an integer:");
+		
+		//check if I/P is of correct type and in range
+		if( (read_status = scanf("%d", &number)) == 1)
+		{
+			if( (number < ll) or (number > ul) )
+				choice = menu();
+			else
+				choice = number;
+		}
+		else	//return quit value 
+			choice = 4;
+		
+		
+		return choice; 
+	}
+	
+	//op menu selection 
+	int part_a( void )
+	{
+		int op_code, code_status;
+		
+		printf("Please choose one of the following:\n");
+		printf("1) copy files 2) move files\n");
+		printf("3) remove files 4) quit\n");
+		printf("Enter the number of your choice:");
+		
+		//wrong input checking 
+		while ( (code_status = scanf("%d", op_code) ) != 1 or ( hotel_code < 1 or hotel > 4) )
+		{
+			//non-int disposing
+			if ( code_status != 1 )
+				scanf("%*s");
+			
+			printf("Enter the correct choices from 1 to 4:");
+		}
+		
+		return op_code;
+		
+	}
+	
+
+	

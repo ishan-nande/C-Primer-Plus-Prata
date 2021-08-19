@@ -1,0 +1,92 @@
+1)	scanf() stops reading after it encounters the whitespace character after the first name.
+	It stores that whitespace in the input. Now, the program encounters another scanf() and this time 
+	it will start from that whitespace. This time the function expects to encounter a float value but,
+	it encounters a whitespace. This stops the scanf() and thus no value is assigned to
+	the weight variable. This leads to wrong calculations.
+	
+2)	a]	234.5
+	b]	Hi!
+	c]	His Hamlet was funny without being vulgar. 
+		has 42 characters.
+	d]	Is 1.20e3 the same as 1201.00 ?
+	
+3)	Change the string Q's symbolic constant declaration to #define Q "\"His Hamlet was funny without being vulgar.\""
+
+4)	#include<stdio.h>
+	#include<string.h>
+
+	#define B "booboo"
+	#define X 10
+
+	int main(void)
+	{
+		int age;
+		
+		char name[40];
+		
+		int xp;
+		
+		printf("Please enter your first name.\n");
+		
+		scanf("%s", name);
+		
+		printf("All right, %s, what's your age?\n", name);
+		
+		scanf("%d", &age);
+		
+		xp = age + X;
+		
+		printf("That's a %c! You must be at least %d.\n", 'B', xp);
+		
+		
+		return 0;
+	}
+	
+5)	printf("This copy of \"%s\" sells for $%0.2f.\nThat is %0.0%% of list.", BOOK, cost, percent);
+
+6)	a]	%d
+	b]	%4X
+	c]	%10.3f
+	d]	%12.2e
+	e]	%-30s
+
+7)	a] %15lu
+	b] %#4x
+	c]	%-12.2E
+	d]	%+10.3f
+	e]	%8.8s
+
+8)	a]	%6.4d
+	b]	%*o
+	c]	%2c
+	d]	%+.2f
+	e]	%-7.5s
+	
+9)	a]	int value;
+		scanf("%d", &value);
+		
+	b]	float value1, value2;
+		scanf("%f %f", &value1, &value2);
+		
+	c]	char value[40];
+		scanf("%s", value);
+	
+	d]	char value[40];
+		int integer;
+		scanf("%s %d", value, &integer);
+		
+	e]	char value[40];
+		int integer;
+		scanf("%*s %d", &integer);
+	
+
+12) The replacement will take place but them it will happen for all the brackets 
+	that have been assigned using #define 
+		
+	
+	
+	
+	
+	
+	
+	

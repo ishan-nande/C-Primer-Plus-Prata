@@ -1,0 +1,84 @@
+1]	8 8
+	4 4 
+	0 0
+	2 2
+	
+2]	4 elements 
+
+3]	ref points to the address of ref[0].
+	ref+1 points to ref[1]
+	
+	++ref is invalid statement.
+	
+	
+4]	a) *ptr will yield the value at torf[0][0] i.e. 12
+	   *(ptr+2)  will yield the value at torf[1][0] i.e. 16
+	   
+	b) *ptr will yield the value at fort[0][0] i.e. 12
+	    *(ptr+2) will yield the value at fort[1][0] i.e. 14
+
+
+5]	b) **ptr will yield the  value at fort[0][0] i.e. 12 
+	   **(ptr + 1) will yield the value at fort[1][0] i.e. 14
+	   
+	a) **ptr will yield the value at torf[0][0]  i.e. 12
+	   **(ptr + 1 ) will yield the value at torf[1][0] i.e. 16
+	   
+6]	a) &grid[22]56]
+	b) &grid[22][0], &grid[22]
+	c) grid, &grid[0][0], &grid[0]
+
+7]	a) int digits[10];
+	b) float rates[6];
+	c) int mat[3][5];
+	d) char * psa[20];
+	e) char (*pstr)[20];
+	
+8]	a) int ar[6]={1,2,4,8,16,32};
+	b) ar[2]
+	c) int ar[100]={[99]=-1};
+	d) int ar[100]={ [3]=101, [5]=101, [10]=101, 101, 101 }
+	
+9]	The index will vary from 0 to 9
+
+10]	a) valid 
+	b) invalid scanf("%p", &rootbeer);
+	c) invalid 
+	d) invalid because rootbeer is not a float
+	e) valid 
+	f) invalid 
+	g) invalid it should be pf = &value;
+	h) valid 
+	
+11]     int ar[800][600];
+
+12]	a) void func_vla(int elements, double ar[elements]);
+	   func_vla(20, trots);
+	   
+	   void func_trad( double ar[], int elems);
+	   func_trad(trots, 20);
+	   
+	b) void func_vla(int rows, int cols, short ar[rows][cols]);
+	   func_vla(10, 30, clops);
+	   
+	   void func_trad( short ar[][30], int rows);
+	   func_trad( clops, 10);
+	   
+	c) void func_vla( int d1, int d2, int d3, long ar[d1][d2][d3]);
+	   func(5,10,15, shots);
+	   
+	   void func_trad( long ar[][10][15], int d1);
+	   func_trad( shots, 5);
+	
+13]	a) show( (int[4]){8,3,9,2}, 4);
+	b) show2( (int[][3]){{8,3,9}, {5,4,1}}, 2);
+
+
+
+
+
+
+
+
+
+

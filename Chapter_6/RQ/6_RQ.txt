@@ -1,0 +1,150 @@
+1]	quack = 2
+	quack =	7
+	quack = 70
+	quack = 64
+	quack = 8
+	quack = 2
+
+2]	36
+	18
+	9
+	4
+	2
+	1
+	
+	
+	if "value" were "double" instead of "int"
+	
+	36.0
+	18.0
+	9.0
+	4.500
+	2.250
+	1.125
+	0.5625
+	......
+	
+	It will keep on priting and go into an infinite loop because there will always 
+	be a value which can be divided by 2. The resulting value will always be greater than zero.
+	
+3]	a) x > 5
+	b) scanf("%lf", &x) != 1
+	c)	x == 5
+	
+4]	a)	scanf("%d", x) == 1
+	b)	x !=5
+	c)	x => 20
+	
+5]	#include <stdio.h>
+	#define SIZE 8
+
+	int main(void)
+	{
+		int i, j, list[10];
+		
+		for ( i = 1; i<=10; i++)
+		{
+			list[i] = 2*i + 3;
+			
+			for( j =1; j<=i; j++)
+			{
+				printf("%d", list[j]);
+				
+			}
+		
+		printf("\n");
+
+		}
+		
+		return 0;
+	}
+
+6]	#include<stdio.h>
+
+	int main(void)
+	{
+		int i,j;
+		
+		for(j = 1; j<=4; j++)
+		{
+			for(i = 1; i<=8; i++)
+		{
+			printf("$");
+		}
+		
+		printf("\n");
+		
+		}
+
+		return 0;
+
+	}	
+
+7]	a)	Hi!Hi!Hi!Bye!Bye!Bye!Bye!
+	b)	ACGM
+
+8]	a) Go west, youn
+	b) Hp!xftu-!zpvo
+	c) Go west, young
+	d) $Go west, youn
+9]	31|32|33|30|31|32|33|
+	***
+	1
+	5
+	9
+	13
+	***
+	2 6
+	4 8
+	8 10
+	***
+	======
+	=====
+	====
+	===
+	==
+
+10]	a)	mint 
+	b)	10
+	c)	values of type "double"
+	d)	ii
+	
+11]	#include <stdio.h>
+	#define SIZE 8
+
+	int main(void)
+	{
+		int by_twos[SIZE];
+		
+		int index;
+		
+		for (index = 1; index <= SIZE; index++)
+			by_twos[index-1] = 2 * index;
+		
+		for (index = 1; index <= SIZE; index++)
+			printf("%d ", by_twos[index-1]);
+
+	printf("\n");
+
+	return 0;
+
+	}
+	
+12]	It should declare return type as "long" and the return statement should return a "long" type value. 
+
+13]	long square(int value)
+	{			
+		return ((long) value) * value;		
+	}
+	
+14]	1: Hi!
+	k = 1
+	k is 1 in the loop
+	Now k is 3 
+	k = 3
+	Now k is 3 in the loop
+	Now k is 5
+	k = 5 
+	k is 5 in the loop
+	Now k is 7
+	k = 7

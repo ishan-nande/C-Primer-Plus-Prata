@@ -1,0 +1,105 @@
+1)	a] x=30
+	b] x=27
+	c] x = 1, y = 1
+	d] x = 3, y = 9
+
+2)	a] x = 6
+	b] x = 52
+	c] x = 0
+	d] x = 13
+
+3)	a] 37.5 
+	b] 1.5
+	c] 35
+	d] 37
+	e] 37.5
+	f] 35.0
+
+4)	#include<stdio.h>
+
+	int main(void)
+	{
+		int i = 0;
+		
+		float n;
+		
+		printf("Watch out! Here come a bunch of fractions!\n");
+		
+		while(++i < 30)
+		{
+			n = 1.0/i;
+			
+			printf("%f\n", n);
+			
+			printf("That's all, folks!\n");
+			
+		}
+		
+		return 0;
+	}
+	
+
+5)	The value of "sec" is not initialized in this program. The variable "sec" has been declared but for the 
+	"while" loop to start, "sec" should be greater than zero and it's value should be assigned. In earlier program we were explicity assigning the value 
+	through "Scanf" before the loop started. That is, we were explicity triggering and satisfying the condition for "while". In the current program we are 
+	dependent on the unitialized value of "sec" which is not a good practice as "sec" can have some different garbage value generates on the memory location of "Sec"
+	from some previous operation.
+	
+6)	%s! C is cool!
+	! C is cool!
+	11
+	11
+	12
+	11
+
+7)	SOS:4 4.00
+
+8)	1
+	2
+	..
+	8
+	9
+	10
+
+9)	#include<stdio.h>
+	#define end_code 103
+
+	int main(void)
+	{
+		int code = 96;
+		
+		while(code++ < end_code)
+		{
+			printf("%c", code);
+			
+			printf("\n");
+		}
+		
+		return 0;
+	}
+	
+10)	a]  1
+	    2
+	
+	b]	101
+		101
+		102
+		102
+		103
+		103
+		
+		
+	c]	stuvw
+	
+11)	Ill contructed as barckets for "while" loop are not defined
+	
+12)	a]	x = x +10;
+	b]	++x; / x++;
+	c]	c = 2 * (a cd + b);
+	d]	c = a + 2 * b
+	
+13)	a]	--x; / x--;
+	b]	m = n % k;
+	c]	p = q / ( b - a );
+	d]	x = (a + b) / (c + d)
+	

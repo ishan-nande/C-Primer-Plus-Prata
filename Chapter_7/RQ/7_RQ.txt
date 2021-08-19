@@ -1,0 +1,75 @@
+1]	a) false
+	b) true
+	c) false
+
+2]	a) number>=90 && number<100
+	b) ch != 'q' && ch != 'k' 
+	c) (number >= 1 && number <= 9) && ( number != 5)
+	d) !(number >= 1 && number >= 9)
+	
+3]	#include <stdio.h>
+
+	int main(void) 
+	{ 
+																	
+		int weight, height; /* weight in lbs, height in inches */
+
+																			
+		scanf("%d, %d" , weight, height); 							
+		
+		if (weight < 100 && height > 64)									 
+		{
+			if (height >= 72)												 
+				printf("You are very tall for your weight.\n");
+				
+			else 						 									
+				printf("You are tall for your weight.\n");					
+		}
+
+		else if (weight => 300 && height < 48)							
+			printf(" You are quite short for your weight.\n");
+
+		else													
+			printf("Your weight is ideal.\n");					 
+			
+		return 0;
+
+	}
+	
+4]	a) 1
+	b) ( ( 3 + 4 ) > 2 ) && ( 3 < 2 ) --> 0
+	c) 1
+	d) 6
+	e) 10
+	
+	
+5]	*#%*#%$#%*#%*#%$#%*#%*#%$#%*#%*#%
+	
+6]	fat
+	hat
+	cat
+	
+	
+7]	if( ch>='a' &&  ch<='z')
+	else if( ch>'A' || ch<'Z')
+	printf("%d lowercase, %d uppercase, %d other", lc, uc, oc);
+	
+8]	The program goes into indefinite loop and prints "You are 65. Here is your gold watch."
+	The line age=65 sets value of "age" to 65.
+	It should have been age == 65
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
