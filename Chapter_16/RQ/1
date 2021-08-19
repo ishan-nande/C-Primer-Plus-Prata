@@ -1,0 +1,80 @@
+1]	a) FPM value is define through a macro.
+	"dist" is calculated where FPM is expanded to 5280
+	
+	b) Value of "plort" is calculated as 
+	  plort = 4 + FEET + FEET;
+	  plort = 4 + 4 + 4;
+	  plort = 16;
+
+	c) 
+	Ivalid code. 
+	Valid options:
+	#define SIX =6
+	nex = SIX;
+
+	d)Valid code.
+	#define NEW(X) ((X)+5)
+	Values of "y" and "berg" are updated.
+	Using new values of "y" and "berg", "est" are calculated.
+	  
+
+2]	#define NEW(X) ((X)+5)
+	y = NEW(y);
+	berg = NEW(berg) * lob;
+	est = NEW(berg) / NEW(y);
+	nlip = lob * NEW(-berg);
+
+3]	#define MIN(X,Y) ( (X)<(Y) ? (X) : (Y) )
+
+4] 	#define EVEN_GT(X,Y) ( (X)%2==0 && (X)<(Y) ? 1 : 0) 
+
+
+
+5]	#define EXP(X,Y) ( \
+		printf(#X "+ " #Y " is %d ", X+Y)
+		printf(#X "* " #Y " is %d", X*Y) )
+
+
+6]	a) #define VAL 25
+	b) #define SPACE " " 
+	c) #define PS() printf(SPACE)
+	d) #define BIG(X) (3+(X) )
+	e) #define SUMSQ(X,Y) ( (X*X)+(Y*Y) )
+
+7]	#define PRINT(NAME,X) printf("name: %s; value: %d; address: %p", NAME, X, &X)
+
+8]	The code can be skipped using #ifndef
+	
+	#define SKIP
+	#ifndef SKIP
+	for(int i=0; i<4;i++);
+	#endif
+
+9]	#idef PR_TIME
+	printf("Date is %s.\n", __DATE__);
+	#endif
+
+10]	
+
+11]	#define GEN(X) ( (printf("Input is %s\n", X), \
+		"boolean" : _Bool, \
+		"not boolean": default)		
+
+12]	Commmand line arguments are in string format and need to be converted to correct numeric data type.
+
+	#include<stdio.h>
+	int main( int argc, char argv[])
+	{
+		int input = atoi(argv[1] );
+		printf("The square root of %d is %f\n", argv[1], sqrt(input) );
+	}
+	
+13]	a) memcpy( data1, data2, 100*sizeof(double));
+	b) memcpy( data1, data2+200, 100*sizeof(double) );
+	
+
+
+
+
+
+

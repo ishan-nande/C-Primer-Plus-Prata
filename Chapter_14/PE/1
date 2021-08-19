@@ -1,0 +1,65 @@
+
+#include<stdio.h>
+#include<stdlib.h>
+
+
+#define MAXDATA 5
+#define LEN 20
+
+struct nameData{
+	char fname[LEN];
+	char mname[LEN];
+	char lname[LEN];
+};
+
+struct memberData {
+	 int soc_sec_num;
+	struct nameData name;
+};
+
+void print_structure( struct memberData * ptr )
+{
+	int i = 0;
+
+	while(i<5)
+	{
+		
+		if( (ptr->name.mname) == NULL ) //no middle name 
+			printf("%s, %s--- %d\n", ptr->name.lname, ptr->name.fname, ptr->soc_sec_num);
+	
+		printf("%s, %s %c.--- %d\n", ptr->name.lname, ptr->name.fname, ptr->name.mname[0], ptr->soc_sec_num);
+
+		ptr++;
+
+		i++;
+	}
+
+}
+		
+int main(int argc, char *argv[] )
+{
+	struct memberData members[5] = {
+		
+		{234,{"1_fname", .lname="1_lname"} },
+
+		{232,{"2_fname","2_mname", "2_lname"} },
+
+		{243243,{"3_fname",  .lname="3_lname"} },
+
+		{2343,{"4_fname", "4_mname", "4_lname"} },
+
+		{234,{"5_fname", "5_mname", "5_lname"} }
+	};
+
+
+
+	struct memberData * test = members;
+	
+	print_structure(members);
+
+	//printf("%d", members->soc_sec_num );	
+
+	return 0;
+
+
+}

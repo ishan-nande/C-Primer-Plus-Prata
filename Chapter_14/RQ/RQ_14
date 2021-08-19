@@ -1,0 +1,157 @@
+1]	struct book { 
+			char itable;
+			int num[20];
+			char * togs;
+			};
+
+2]	6 1
+	22 Spiffo Road 
+	S p
+
+3]	struct monthData {
+			char name[10];
+			char abb[4];
+			int nDays;
+			int monNum;
+			};
+
+4]	struct monthData{
+			char name[10];
+			char abb[4];
+			int nDays;
+			int monNum;
+			};
+	
+	struct monthData months[12];
+	
+	int i;
+	
+	for(i=0; i<12; i++)
+	{
+		if(i==1) months[i].nDays = 28;
+		
+		if( (i%2)==0 ) 
+			months[i].nDays = 31;
+		else
+			months[i].nDays = 30;
+	}
+	
+			
+	
+5]	int totalDays( struct monthData data, int mon_num)
+	{
+		int i;
+		int total_days = 0;
+		
+		for(i=0; i<mon_num-1; i++)
+			total_days += data[i].nDays;
+	
+		return total_days;
+	}
+	
+6]	typedef struct lens { //lens descriptor 
+		float foclen; //focal length in mm
+		float fstop; //aperture 
+		char brand[30]; //brand name 
+		} LENS;
+	a)	
+		LENS lensArray[10];
+		
+		strcpy(lensArray[2].brand, "Remarkatar");
+		lensArray[2].foclen = 500.0;
+		lensArray[2].aperature = 500.0/2.0;
+
+
+	b)	LENS lensArray[10];
+	
+		lensArray[2] = { .brand = "Remarkatar",
+				 .foclen = 500.0,
+				 .aperature = 500.0/2.0 };
+		LENS lensArray[10] = { [2] = {500, 2, "Remarkatar"} };
+				 
+
+7]	a) 6
+	   Arcturan
+	   cturan
+	   
+	 b) deb.title.last
+	    pb->title.last
+	 c) void dataPrint( struct bem * addr )
+	    {
+	    	printf("%s %s is a %d-limbed %s",
+	    	addr->title.first, addr->title.last, addr->limbs, addr->type);
+	    }
+	    
+8]	a) willie.born
+	b) pt->born
+	c) scanf("%d", &willie.born )
+	d) scanf("%d", &pt->born )
+	e) scanf("%s", willie.name.lname)
+	f) scanf("%s", pt->name.lname )
+	g) willie.name.fname[2]
+	h) int n = strlen( willie.name.fname) + strlen(willie.name.lname)
+
+9]	struct car {
+		char name[10];
+		float hp;
+		float mpg;
+		float wheelbase;
+		int year;
+		};
+		
+10]	a) struct gas complete( struct gas data )
+	   {
+	   	float miles_pg = data.distance + data.gals;
+	   	
+	   	data.mpg = miles_pg;
+	   	
+	   	return data;
+	   }
+	   
+	   b) void complete( struct gas * dataAddr )
+	      {
+	      	 float miles_pg = dataAddr->distance + dataAddr->gals;
+	      	 dataAddr->mpg = miles_pg;
+	      }
+
+11]	enum choices { no, yes, maybe };
+
+12]	char * (*pf)(char *, char );
+
+13]	double f1(double a , double b )
+	{ return a*b; }
+		
+	double f2(double a , double b )
+	{ return a*b; }
+
+	double f3(double a , double b )
+	{ return a*b; }
+
+	double f4(double a , double b )
+	{ return a*b; }
+	
+	typedef double (*FUNC_PTR)(double , double );
+	
+	FUNC_PTR arfptr[4] = {f1, f2, f3, f4};
+	
+	//method 1 
+	arfptr[1](10.0, 2.5);
+	//methpd 2
+	(*arfptr[1])(10.0,2.5);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

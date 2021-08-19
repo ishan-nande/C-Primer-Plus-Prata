@@ -1,0 +1,71 @@
+
+#include<stdio.h>
+#include<stdlib.h>
+
+#define LEN 20
+
+struct playerData{
+	int pNum;
+	char fname[LEN];
+	char lname[LEN];
+	int nAtBats;
+	int nHits;
+	int nWalks;
+	int nRBIs;
+};
+
+int main(int argc, char *argv[] )
+{
+	struct playerData test;
+
+	//struct playerData players[4];
+
+	FILE * fp;
+
+	if( (fp=fopen("player_data", "r")) == NULL )
+	{
+		fprintf(stderr, "failed to opne the file");
+		exit(EXIT_FAILURE);
+	}
+
+	/*	
+	while( fscanf(fp, "%d", &test.pNum)==1 )
+	{
+		printf("%d\n", test.pNum);
+
+		while( fscanf(fp,"%s %s %d %d %d %d",
+				test.fname,test.lname,
+				&test.nAtBats,&test.nHits,
+				&test.nWalks, &test.nRBIs)
+				==6 )
+		{		
+			printf("%s %s %d %d %d %d\n",
+					test.fname,
+					test.lname,test.nAtBats,
+					test.nHits,test.nWalks,
+					test.nRBIs);
+		}			
+	}
+	
+	*/
+	while( fscanf(fp, "%d %s %s %d %d %d %d",
+				&test.pNum,test.fname,
+				test.lname,&test.nAtBats,
+				&test.nHits,&test.nWalks,
+				&test.nRBIs)==7 )
+	{
+
+		
+		printf("%d %s %s %d %d %d %d\n",
+				test.pNum,test.fname,
+				test.lname,test.nAtBats,
+				test.nHits,test.nWalks,
+				test.nRBIs);
+				
+	}
+
+	
+	return 0;	
+}
+
+
