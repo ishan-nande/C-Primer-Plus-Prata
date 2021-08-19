@@ -1,0 +1,211 @@
+1]	null character needs to be included when char array or string is being initialized.
+	
+	int main(void)
+	{
+		char name[] = {'F', 'e', 's', 's', '\0' };
+		...
+	}
+	
+2]	See you at the snack bar.
+	ee you at the snack bar.
+	See you
+	e you
+	
+3]	
+	y
+	
+	my
+	
+	mmy
+	
+	ummy
+	
+	Yummy
+	
+4]	I read part of it all the way through.
+
+5]	a)	Ho Ho Ho! !oH oH oH
+
+	b)	a valid pointer to a char data type 
+	
+	c)	address of the first character 'H'
+	
+	d)	For *--pc the decrementing of the pointer will happen and then the de-referencing of the value pointed to by the pointer. For --*pc, the value pointed to by the pointer will be de-referenced and then that value will be decremented.
+	
+	e)	Ho Ho Ho! !oH oH o
+	
+	f) The first while expression tests for presence of a NULL character. If it encounters it then the loop will stop.
+	The second while expression test for the difference between two pointers. If the difference is 0 it means that the start of the string has been reached and the loop will stop.
+	
+	g) When null string is supplied, the first while loop will not execute as the test within it will be false. This means that 'pc' is still a null pointer. When control pasess to the next 'do while' loop, putchar() will de-reference the address that is before the null pointer. This process will continue infinitely, because the 'while' condition will never be false. 
+	
+	h) Instead of suplying the complete string only the name of the string can be supplied as it represents the address of the first character in the array of char or the string.
+	
+6]	sign uses 1 byte of memory. 
+	"$" uses 2 bytes; 1 byte for storing the character and 1 byte for storing the null character.
+	
+7]	How are ya, sweetie? How are ya, sweetie?
+	Beat the clock.
+	eat the clock.
+	Beat the clock. Win a toy.
+	Beat
+	chat
+	hat
+	at
+	t
+	t
+	at
+	How are ya, sweetie?
+
+
+8]	faavvrrhhee
+	*le*on*sm
+
+9]	char * s_gets(char * st, int n)
+	{
+		char * ret_val ;
+		
+		int i = 0;
+		
+		//returns an address that was passed to as first input 
+		ret_val = fgets(st, n, stdin);
+		
+		if(ret_val)
+		{
+
+			while( *st != '\n' && *st != '\0')
+				st++;
+			
+			//if newline character is found replace it with null character 	
+			if(*st == '\n')
+				*st = '\0';
+			else 
+			{
+				while( getchar() != '\n' )
+					continue;
+			}
+		
+		}
+		
+		return ret_val;
+	}
+	
+10]  int stringLen(const char *st)
+     {
+		char *ps;
+		
+		int count=0;
+		
+		for(ps=st; *ps!='\0'; ps++)
+			count++;
+			
+		return count;
+       }
+
+11]	char * s_gets(char * st, int n)
+	{
+		char * ret_val ;
+		
+		int i = 0;
+		
+		ret_val = fgets(st, n, stdin);
+		
+		if(ret_val)
+		{		
+			find = strchr(st, '\n');		
+
+			if(*find == '\n')
+				*find = '\0';
+			else 
+				while( getchar() != '\n' )
+					continue;
+		}
+		
+		return ret_val;
+	}
+
+12]	#include<stdio.h>
+
+	char * returnPointer(char *st)
+	{
+		char *ps;
+		ps = st;
+		
+		while(  *ps != ' ') ps++;
+			
+		return ( ps != NULL ? ps : NULL );
+	}
+	
+13	//compare.c -- this will work
+
+	#include<stdio.h>
+	#include<string.h>
+	#include<ctype.h>
+
+	#define ANSWER "grant"
+	#define SIZE 40
+
+	char * s_gets(char *, int);
+
+	int main(void)
+	{
+		char try[SIZE];
+		
+		puts("Who is buried in Grant's tomb?");
+		
+		s_gets(try,SIZE);
+		
+		int i;
+		
+		for(i=0;i<strlen(try);i++)
+			try[i] =  tolower(try[i]) ;
+		
+		while( (strcmp(try,ANSWER) ) !=0 )
+		{
+			puts("No, that's wrong.Try again.");
+			s_gets(try, SIZE);
+			
+		}
+		
+		puts("That's right");
+		
+		return 0;
+	}
+
+	//returns a pointer to the input string, reads a line and removes a newline character in it if present 
+	char * s_gets(char * st, int n)
+	{
+		char * ret_val ;
+		
+		int i = 0;
+		
+		//returns an address that was passed to as first input 
+		ret_val = fgets(st, n, stdin);
+		
+		if(ret_val)
+		{
+			/*
+			check for new line characters and null characters 
+			If newline character is detected the first test turns to false.
+			The second check for null character is not needed as whatever the result it 
+			may give, the final result is going to be false. This is called short-circuitting.
+			
+			false && true = false 
+			false && false = false 
+			true && false = false 
+			true && true = true 
+			*/
+			while( st[i] != '\n' && st[i] != '\0')
+				i++;
+			
+			//if newline character is found replace it with null character 	
+			if(st[i] == '\n')
+				st[i] = '\0';
+			else //must have words[i] == '\0' indicating end of string and now the extra characters on the input line cand be dscarded 
+				while( getchar() != '\n' )
+					continue;
+		
+		}
+		
+		return ret_val;
+	}

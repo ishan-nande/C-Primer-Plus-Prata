@@ -1,0 +1,152 @@
+1]	"fp" should be of the type "FILE" and not "int". Also, the file opening mode has not been specified.
+	The file should have been opened under "w" mode. The usage of fputs() is incorrect.
+	
+	int main(void)
+	{
+		FILE * fp;
+		int k;
+		
+		fp = fopen( "gelatin", "w" );
+		
+		for(k=0; k<30; k++)
+			fputs("Nanette eats gelatin.", fp);
+		
+		fclose( fp );
+		
+		return 0;
+	}
+
+2]	The program fist checks if the number of command line arguments are at least two. The second argument is the name of the
+	file that will be read in text mode. The program then tries to open that file in read mode. If a NULL pointer is returned
+	the program will exit. Then the program loops through the file's characters until EOF is encountered. The loop checks if the
+	character is a digit. If yes, that character is printed. After the loop, the file is closed.
+	
+3]	a) ch = getc( fp1 );
+	 
+	b) fprintf( fp2, "%c\n", ch );
+	
+	c) putc( ch , fp2 );
+	
+	d) fclose( fp1 );
+	
+4]	
+	int main( int argc, char argv[] )
+	{
+
+		float value;
+
+		int count=0;
+
+		float sum = 0; //initial sume of float values 
+
+		//no comand line arguments, then procees with stdin input method 
+		if( argc == 1 )
+		{
+			while( scanf("%.2f", &value) == 1 )
+			{
+				count++;
+				sum+=value;
+			}
+
+			printf("mean = %.2f", sum / count );
+		}
+
+		//float values hav been  provided through a file name 
+		else
+		{
+			FILE * fp;
+
+			fp = fopen( argv[1] , "r" );
+
+			while( fscanf( fp, "%f", value) == 1 )
+			{
+				count++;
+				sum+=value;
+			}
+
+			printf("mean = %.3", sum / count );
+		}
+
+		return 0;
+		
+5]	
+	#include<stdio.h>
+	#include<stdlib.h>
+	#include<stdbool.h>
+
+	int  char_check( char * line, char ch );
+
+	int main(int argc, char *argv[] )
+	{
+		char line[256];
+
+		FILE *fp;
+
+		if( (fp=fopen(argv[2], "r")) == NULL)
+		{
+			printf("Failed to open file %s", argv[2] );
+			exit(EXIT_FAILURE);
+		}
+
+		while( fgets(line, 256, fp) != NULL )
+		{		
+			
+			if( char_check(line, *argv[1]) )
+				printf("%s", line );	
+		
+
+		//	puts( line );
+
+		}
+		
+		
+
+		return 0;	
+	}
+
+	int  char_check( char * line, char ch )
+	{
+		char * ptr;
+
+		int in_line = 0;
+
+	 	ptr = line;
+
+		while( (*ptr) != '\n' )
+		{
+			if( (*ptr) == ch)
+			{
+				in_line = 1;
+				break;
+			}
+
+			ptr++;
+		}
+
+		return in_line;
+	}
+	
+6]	
+
+7]	
+	
+8]	printf() will print to the stdout i.e. the terminal. You cannot specify the stream to which the output will be written
+
+	fprintf() can be used to specify the stream to which the data will be written. In this case stdout.
+	
+	In this case the data will be written to stderr stream in case there is any error. If there is any error the message will be written to the screen and not to the file.
+
+
+9]	r+
+
+
+
+
+
+
+
+
+
+
+
+

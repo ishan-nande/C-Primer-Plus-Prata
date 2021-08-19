@@ -1,0 +1,31 @@
+1]	automatic, register, static with no linkage
+
+2]	static with external/internal/no linkage
+
+3]	static storage class with external linkage, static storage class with internal linkage 
+
+4]	no linkage 
+
+5]	"extern" keyword is in referencing declaration of variables which have been defined in other files. This keyword tells the
+	compiler to look for the variable in other files where it has been defined.
+
+6]	malloc() returns a pointer to an un-initialized memory block
+	calloc() returns a pointer to a memory block whose bits are all set to zero
+	
+7]	In file 1, petal() knows "daisy" because it has file scope. In "petal()", "external" cannot be used for "lily" because
+	"lily" has block scope limited to "main()".
+
+	In file 2, "daisy" has reference declaration and has been defined in file 1. It has file scope and can be seen by all the 		functions in file 2. The variable "lily" can be seen by all the function but only those that are defined in file 2, because 		it has internal linkage.
+	
+8]	color in main() is B
+	color in first() is R
+	color in main is B
+	color in second() is G
+	color in main() is G
+	
+9]	a)The programmer intends to use "plink" as as variable which can be used until the program ends. It will have file 	scope with internal linkage and that's "static" has been used. In the function "value_ct", "const" has been used to 	indicate that the array which will be supplied to this function should be treated as if it contains constant data 	which cannot be changed because of function's operations. 
+
+	b)No it won't because "value" and "n" are already copies of original data that have been stored in a different memory
+	  locations. Thus this won't change alter the values in the calling program.
+
+	
